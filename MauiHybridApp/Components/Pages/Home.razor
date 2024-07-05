@@ -1,0 +1,19 @@
+﻿@page "/"
+@using System.Diagnostics
+@inject IJSRuntime JSRuntime
+
+@code {
+    protected override Task OnInitializedAsync()
+    {
+        base.OnInitializedAsync();
+
+        MauiHybridApp.MainPage.CallFromJs += async (sender, args) =>
+        {
+            Debug.WriteLine("MauiHybridApp.MainPage.CallFromJs\t:\t" + args);
+            string result = await JSRuntime.InvokeAsync<string>("JsAlert", args);
+            Debug.WriteLine("MauiHybridApp.MainPage.CallFromJs Result\t:\t" + result);
+        };
+
+        return Task.CompletedTask;
+    }
+}

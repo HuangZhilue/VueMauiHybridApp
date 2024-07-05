@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <!-- TODO 如果需要使用JS/.NET互操作特性，需要额外引入下面这俩行 -->
+    <!-- <div id="blazorapp"></div>, 
+     为了能够实现.Net调用JS, 需要用到JSRuntime, 
+     但是JSRuntime需要在Webview内部的Razor页面中才能正常使用，
+     故需要使用一个额外的id为blazorapp的div来初始化Razor页面
+     (空白页面, 仅保留C#代码) -->
+    <!-- id可自行确定, 只需要与 MainPage 中的 BlazorWebView.RootComponents 的 Selector 所指定的名称相同即可 -->
+    <div id="blazorapp"></div>
+    <!-- 引入JS/.NET互操作所必要的js -->
+    <script src="_framework/blazor.webview.js" autostart="false"></script>
+  </body>
+</html>
