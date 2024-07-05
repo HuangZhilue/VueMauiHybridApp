@@ -117,6 +117,10 @@
 
     > 运行前确保wwwroot目录中已经粘贴有最新构建的vue app
 
+> :warning: **自行确保有添加各个平台下所需要的权限**
+
+> 如./Platforms/Android/AndroidManifest.xml文件中已经添加了所需要的安卓权限
+
 ---
 
 ### 完整的前后台互动
@@ -231,6 +235,10 @@
     ProjectNamespane.MainPage.CallJsFunction?.Invoke(null!, "Message From .Net");
     ```
 
+> :warning: **自行确保有添加各个平台下所需要的权限**
+
+> 如./Platforms/Android/AndroidManifest.xml文件中已经添加了所需要的安卓权限
+
 ---
 
 ## 一些小问题
@@ -240,7 +248,7 @@
 - 在安卓系统上使用&lt;input type="file" capture="camera" /&gt;时，不能调出拍照功能 
     - https://github.com/dotnet/maui/issues/884
     - 目前可行的解决方法 https://github.com/dotnet/maui/issues/884#issuecomment-1760299780
-    - 可参考项目中的
+    - 目前的解决方法可参考项目中的
         - [CustomActivityResultCallbackRegistry.cs](./MauiHybridApp/Platforms/Android/CustomActivityResultCallbackRegistry.cs)
         - [CustomMauiWebChromeClient.cs](./MauiHybridApp/Platforms/Android/CustomMauiWebChromeClient.cs)
         - [MainActivity.cs](./MauiHybridApp/Platforms/Android/MainActivity.cs)
