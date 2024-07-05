@@ -14,9 +14,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{1E44F9
 	ProjectSection(SolutionItems) = preProject
 		Sample\Sample_1.png = Sample\Sample_1.png
 		Sample\Sample_2.png = Sample\Sample_2.png
+		Sample\Sample_2_1.png = Sample\Sample_2_1.png
 		Sample\Sample_3.png = Sample\Sample_3.png
 		Sample\Sample_4.png = Sample\Sample_4.png
 		Sample\Sample_5.png = Sample\Sample_5.png
+		Sample\Sample_6.png = Sample\Sample_6.png
+		Sample\Sample_7.png = Sample\Sample_7.png
 	EndProjectSection
 EndProject
 Global

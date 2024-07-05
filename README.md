@@ -15,6 +15,11 @@
 
 - [来自BlazorWebView的小问题](#一些小问题) 
 
+## 示例
+
+![示例](./Sample/Sample_7.png)
+![示例](./Sample/Sample_6.png)
+
 ## 先决条件
 
 1. 创建.Net MAUI Blazor Hybrid 项目
@@ -29,7 +34,7 @@
 
     > 比如：跟随 vite 的[官方文档](https://vuejs.org/guide/quick-start.html)创建一个 vue 应用。
 
-    ![创建Vue应用](./Sample/Sample_2.png)
+    ![创建Vue应用](./Sample/Sample_2_1.png)
 
 ---
 
