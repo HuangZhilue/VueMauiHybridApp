@@ -25,7 +25,7 @@
 
 ## 不同的操作方式
 
-### 最简单的打包方式
+### 最简单的，不需要.Net与Vue互动操作的
 
 最简单，不关注JS与.Net之间的互动操作的，仅仅是将一个简单的vue网页打包成应用程序的。
 
@@ -49,9 +49,45 @@
     ```js
     <script src="_framework/blazor.webview.js" autostart="false"></script>
     ```
-    -   Vue开发阶段请直接忽略"找不到_framework/blazor.webview.js"的错误
+    >[!TIP]
+    >Vue开发阶段请直接忽略"找不到_framework/blazor.webview.js"的错误
 
--
+-   打开.Net MAUI Blazor Hybrid项目中的MainPage.xaml.cs，按照[微软官方教程](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript)编写JSInvokable方法，例如：
+    ```csharp
+    [JSInvokable]
+    public static async Task<string> CallDotNetFromJs(string message)
+    {
+        return await Task.FromResult("CallDotNetFromJs");
+    }
+    ```
+
+-   打开vue项目，同样是按照[微软官方教程](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript)编写Javascript方法
+    ```js
+    DotNet.invokeMethodAsync(
+      MAUI_Project_ASSEMBLY_NAME,
+      'CallDotNetFromJs',
+      'this is Message'
+    ).then((data) => {
+      console.log(data)
+    })
+    ```
+    > [!NOTE]  
+    > 如果是Typescript项目，需要注意，要忽略ts检查器报的"DotNet"对象未定义的错误
+    > 例如使用以下方式忽略错误，
+    ```ts
+    // ./src/globals.d.ts
+    declare interface Window {
+      DotNet: any
+    }
+
+    // ./src/views/HomeView.vue
+    // 定义DotNet
+    const DotNet = window.DotNet
+    // 使用DotNet
+    DotNet.invokeMethodAsync(xxx,xxx)
+    ```
+
+-   构建之后复制文件粘贴到wwwroot目录中。 [参照“最简单的”这一部分](###最简单的，不需要.Net与Vue互动操作的)
 
 ---
 
