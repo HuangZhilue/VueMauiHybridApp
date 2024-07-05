@@ -1,58 +1,110 @@
 # VueMauiHybridApp
 
-# Ê¹ÓÃ.Net MAUI Blazor Hybrid´ò°üºÍ°ü×°VueÓ¦ÓÃ
+# ä½¿ç”¨.Net MAUI Blazor Hybrid æ‰“åŒ…å’ŒåŒ…è£… Vue åº”ç”¨
 
-## ¼ò½é
-Ê¹ÓÃ.Net MAUI Blazor Hybrid À´´ò°üºÍ°ü×°Ò»¸öVueÓ¦ÓÃ¡£ÒÔ±ã½«VueÍøÒ³´øµ½°²×¿App¡¢Window×ÀÃæ³ÌĞòµÈµÈµÄÆäËüÆ½Ì¨ÉÏÕ¹Ê¾¡£
+## ç®€ä»‹
 
-## ÏÈ¾öÌõ¼ş
+ä½¿ç”¨.Net MAUI Blazor Hybrid æ¥æ‰“åŒ…å’ŒåŒ…è£…ä¸€ä¸ª Vue åº”ç”¨ã€‚ä»¥ä¾¿å°† Vue ç½‘é¡µå¸¦åˆ°å®‰å“ Appã€Window æ¡Œé¢ç¨‹åºç­‰ç­‰çš„å…¶å®ƒå¹³å°ä¸Šå±•ç¤ºã€‚
 
-1.	´´½¨.Net MAUI Blazor HybridÏîÄ¿
+## ç›®å½•
 
->´ò¿ªVisual Studio²¢´´½¨Ò»¸öĞÂµÄ.Net MAUI Blazor HybridÏîÄ¿¡£²¢°´ÕÕÏòµ¼µÄÖ¸Ê¾Íê³ÉÏîÄ¿µÄ´´½¨¡£
+- [ä¸éœ€è¦å‰åå°äº’åŠ¨](#æœ€ç®€å•çš„)
+- [ç®€å•çš„å‰åå°äº’åŠ¨](#ç®€å•çš„å‰åå°äº’åŠ¨)
+- [å®Œæ•´çš„å‰åå°äº’åŠ¨](#å®Œæ•´çš„å‰åå°äº’åŠ¨)
+    - [ç®€å•ç¤ºä¾‹](#ç®€å•ç¤ºä¾‹)
 
-![´´½¨MAUI Blazor HybridÏîÄ¿](./Sample/Sample_1.png)
+- [æ¥è‡ªBlazorWebViewçš„å°é—®é¢˜](#ä¸€äº›å°é—®é¢˜) 
 
-2.	´´½¨VueÓ¦ÓÃ
+## å…ˆå†³æ¡ä»¶
 
->°´ÕÕ×Ô¼ºÏ²»¶µÄ·½Ê½´´½¨Ò»¸öVueÓ¦ÓÃ¡£
+1. åˆ›å»º.Net MAUI Blazor Hybrid é¡¹ç›®
 
->±ÈÈç£º¸úËæviteµÄ[¹Ù·½ÎÄµµ](https://vuejs.org/guide/quick-start.html)´´½¨Ò»¸övueÓ¦ÓÃ¡£
+    > æ‰“å¼€ Visual Studio å¹¶åˆ›å»ºä¸€ä¸ªæ–°çš„.Net MAUI Blazor Hybrid é¡¹ç›®ã€‚å¹¶æŒ‰ç…§å‘å¯¼çš„æŒ‡ç¤ºå®Œæˆé¡¹ç›®çš„åˆ›å»ºã€‚
 
-![´´½¨VueÓ¦ÓÃ](./Sample/Sample_2.png)
+    ![åˆ›å»ºMAUI Blazor Hybridé¡¹ç›®](./Sample/Sample_1.png)
 
----
+2. åˆ›å»º Vue åº”ç”¨
 
-## ²»Í¬µÄ²Ù×÷·½Ê½
+    > æŒ‰ç…§è‡ªå·±å–œæ¬¢çš„æ–¹å¼åˆ›å»ºä¸€ä¸ª Vue åº”ç”¨ã€‚
 
-### ×î¼òµ¥µÄ£¬²»ĞèÒª.NetÓëVue»¥¶¯²Ù×÷µÄ
+    > æ¯”å¦‚ï¼šè·Ÿéš vite çš„[å®˜æ–¹æ–‡æ¡£](https://vuejs.org/guide/quick-start.html)åˆ›å»ºä¸€ä¸ª vue åº”ç”¨ã€‚
 
-×î¼òµ¥£¬²»¹Ø×¢JSÓë.NetÖ®¼äµÄ»¥¶¯²Ù×÷µÄ£¬½ö½öÊÇ½«Ò»¸ö¼òµ¥µÄvueÍøÒ³´ò°ü³ÉÓ¦ÓÃ³ÌĞòµÄ¡£
-
--	¹¹½¨vueÓ¦ÓÃ
-
--	´ò¿ª¹¹½¨Íê³ÉµÄÄ¿Â¼£¨ÈçdistÄ¿Â¼£©£¬²¢¸´ÖÆËùÓĞÎÄ¼ş
-
--	´ò¿ªMAUI Blazor HybridÏîÄ¿ÖĞµÄwwwrootÄ¿Â¼£¬²¢Õ³Ìù¸²¸ÇÎÄ¼ş
-
--	ÔËĞĞMAUI Blazor HybridÓ¦ÓÃ¼´¿É
-
-![¸´ÖÆÕ³Ìù¼´¿É](./Sample/Sample_3.png)
+    ![åˆ›å»ºVueåº”ç”¨](./Sample/Sample_2.png)
 
 ---
 
-### ¼òµ¥µÄVueºÍ.Net»¥¶¯
+## ä¸åŒçš„æ“ä½œæ–¹å¼
 
-±È½Ï¼òµ¥£¬ĞèÒªvue³ÌĞòµ÷ÓÃÒ»Ğ©.Net·½·¨µÄ£¬Èç¼ì²éÓ¦ÓÃÈ¨ÏŞ¡¢µ÷ÓÃÉãÏñÍ·¡¢É¨ÃèÌõĞÎÂë¡¢¶şÎ¬ÂëµÈÈÎÎñµÄ¡£
+### æœ€ç®€å•çš„
 
--	´ò¿ªvueÏîÄ¿µÄindex.htmlÎÄ¼ş£¬ÔÚ&lt;body&gt;±êÇ©ÄÚÌí¼ÓÒÔÏÂ´úÂë
+> ä¸éœ€è¦.Netä¸Vueäº’åŠ¨æ“ä½œ
+
+æœ€ç®€å•ï¼Œä¸å…³æ³¨ JS ä¸.Net ä¹‹é—´çš„äº’åŠ¨æ“ä½œçš„ï¼Œä»…ä»…æ˜¯å°†ä¸€ä¸ªç®€å•çš„ vue ç½‘é¡µæ‰“åŒ…æˆåº”ç”¨ç¨‹åºçš„ã€‚
+
+1. æ„å»º vue åº”ç”¨
+
+2. æ‰“å¼€æ„å»ºå®Œæˆçš„ç›®å½•ï¼ˆå¦‚ dist ç›®å½•ï¼‰ï¼Œå¹¶å¤åˆ¶æ‰€æœ‰æ–‡ä»¶
+
+3. æ‰“å¼€ MAUI Blazor Hybrid é¡¹ç›®ä¸­çš„ wwwroot ç›®å½•ï¼Œå¹¶ç²˜è´´è¦†ç›–æ–‡ä»¶
+
+4. è¿è¡Œ MAUI Blazor Hybrid åº”ç”¨å³å¯
+
+    ![å¤åˆ¶ç²˜è´´å³å¯](./Sample/Sample_3.png)
+
+---
+
+### ç®€å•çš„å‰åå°äº’åŠ¨
+
+> ç®€å•çš„ Vue å’Œ.Net äº’åŠ¨ï¼Œç”±Vueè°ƒç”¨.Netæ–¹æ³•çš„å•å‘äº’åŠ¨
+
+æ¯”è¾ƒç®€å•ï¼Œéœ€è¦ vue ç¨‹åºè°ƒç”¨ä¸€äº›.Net æ–¹æ³•çš„ï¼Œå¦‚æ£€æŸ¥åº”ç”¨æƒé™ã€è°ƒç”¨æ‘„åƒå¤´ã€æ‰«ææ¡å½¢ç ã€äºŒç»´ç ç­‰ä»»åŠ¡çš„ã€‚
+
+#### ä¿®æ”¹vueé¡¹ç›®
+
+- æ‰“å¼€ vue é¡¹ç›®çš„ index.html æ–‡ä»¶ï¼Œåœ¨&lt;body&gt;æ ‡ç­¾å†…æ·»åŠ ä»¥ä¸‹ä»£ç 
+
     ```js
     <script src="_framework/blazor.webview.js" autostart="false"></script>
     ```
-    >[!TIP]
-    >Vue¿ª·¢½×¶ÎÇëÖ±½ÓºöÂÔ"ÕÒ²»µ½_framework/blazor.webview.js"µÄ´íÎó
 
--   ´ò¿ª.Net MAUI Blazor HybridÏîÄ¿ÖĞµÄMainPage.xaml.cs£¬°´ÕÕ[Î¢Èí¹Ù·½½Ì³Ì](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript)±àĞ´JSInvokable·½·¨£¬ÀıÈç£º
+    > :bulb:
+    > Vue å¼€å‘é˜¶æ®µè¯·ç›´æ¥å¿½ç•¥"æ‰¾ä¸åˆ°\_framework/blazor.webview.js"çš„é”™è¯¯
+
+- æ‰“å¼€ vue é¡¹ç›®ï¼ŒåŒæ ·æ˜¯æŒ‰ç…§[å¾®è½¯å®˜æ–¹æ•™ç¨‹](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript)ç¼–å†™ Javascript æ–¹æ³•
+
+    ```js
+    DotNet.invokeMethodAsync(
+    MAUI_Project_ASSEMBLY_NAME,
+    "CallDotNetFromJs",
+    "this is Message"
+    ).then((data) => {
+    console.log(data);
+    });
+    ```
+
+    > :information_source: 
+    > å¦‚æœæ˜¯ Typescript é¡¹ç›®ï¼Œéœ€è¦æ³¨æ„ï¼Œè¦å¿½ç•¥ ts æ£€æŸ¥å™¨æŠ¥çš„"DotNet"å¯¹è±¡æœªå®šä¹‰çš„é”™è¯¯
+    > ä¾‹å¦‚ï¼šä½¿ç”¨ä»¥ä¸‹æ–¹å¼å¿½ç•¥é”™è¯¯ï¼Œ
+
+    ```ts
+    // ./src/globals.d.ts
+    declare interface Window {
+    DotNet: any;
+    }
+
+    // ./src/views/HomeView.vue
+    // å®šä¹‰DotNet
+    const DotNet = window.DotNet;
+    // ä½¿ç”¨DotNet
+    DotNet.invokeMethodAsync(xxx, xxx);
+    ```
+
+- æ„å»ºä¹‹åå¤åˆ¶æ–‡ä»¶ç²˜è´´åˆ° wwwroot ç›®å½•ä¸­ã€‚ [å‚ç…§â€œæœ€ç®€å•çš„â€è¿™ä¸€éƒ¨åˆ†](#æœ€ç®€å•çš„)
+
+#### ä¿®æ”¹.Net MAUI Blazor Hybridé¡¹ç›®
+
+- æ‰“å¼€.Net MAUI Blazor Hybrid é¡¹ç›®ä¸­çš„ MainPage.xaml.csï¼ŒæŒ‰ç…§[å¾®è½¯å®˜æ–¹æ•™ç¨‹](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript)ç¼–å†™ JSInvokable æ–¹æ³•ï¼Œä¾‹å¦‚ï¼š
+
     ```csharp
     [JSInvokable]
     public static async Task<string> CallDotNetFromJs(string message)
@@ -61,39 +113,135 @@
     }
     ```
 
--   ´ò¿ªvueÏîÄ¿£¬Í¬ÑùÊÇ°´ÕÕ[Î¢Èí¹Ù·½½Ì³Ì](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript)±àĞ´Javascript·½·¨
+- è¿è¡Œ
+
+    > è¿è¡Œå‰ç¡®ä¿wwwrootç›®å½•ä¸­å·²ç»ç²˜è´´æœ‰æœ€æ–°æ„å»ºçš„vue app
+
+---
+
+### å®Œæ•´çš„å‰åå°äº’åŠ¨
+
+> å®Œæ•´çš„ Vue å’Œ.Net äº’åŠ¨ï¼Œé™¤äº†Vueè°ƒç”¨.Netæ–¹æ³•ï¼Œè¿˜æœ‰.Netè°ƒç”¨Vueæ–¹æ³•
+
+é™¤äº†[ç¬¬äºŒéƒ¨åˆ†](#ç®€å•çš„å‰åå°äº’åŠ¨)æ‰€è¯´çš„åŠŸèƒ½ä¹‹å¤–ï¼Œè¿˜éœ€è¦.Net ä¸»åŠ¨è°ƒç”¨ vue çš„ js æ–¹æ³•ï¼Œä»¥ä¾¿é€šçŸ¥ vue ç¨‹åºçš„ï¼Œå¦‚åå°æœåŠ¡ã€ä»»åŠ¡çš„ä¸»åŠ¨é€šçŸ¥ç­‰åŠŸèƒ½ã€‚
+
+#### ä¿®æ”¹vueé¡¹ç›®
+
+> :information_source: å‰ç½®æ¡ä»¶ï¼šè¯·å…ˆæŒ‰ç…§[ç¬¬äºŒéƒ¨åˆ†-ç®€å•çš„å‰åå°äº’åŠ¨](#ç®€å•çš„å‰åå°äº’åŠ¨)æ‰€è¯´çš„æ­¥éª¤è¿›è¡Œä¿®æ”¹
+
+- æ‰“å¼€ vue é¡¹ç›®çš„ index.html æ–‡ä»¶ï¼Œåœ¨&lt;body&gt;æ ‡ç­¾å†…æ·»åŠ ä»¥ä¸‹ä»£ç 
+
+    ```html
+    <div id="blazorapp"></div>
+    ```
+    
+    > :bulb:
+    > ä¸è¦è¦†ç›–åŸæœ¬çš„&lt;div id="app"&gt;&lt;/div&gt;ï¼Œæ˜¯æ–°æ·»åŠ ä¸€è¡Œ
+
+    - æ·»åŠ ä¹‹åçš„index.htmlçš„&lt;body&gt;æ ‡ç­¾åº”è¯¥æ˜¯è¿™æ ·å­
+
+        ```html
+        <!-- è¿™æ˜¯viteåˆ›å»ºvueé¡¹ç›®æ—¶å°±æœ‰çš„ -->
+        <div id="app"></div>
+        <script type="module" src="/src/main.ts"></script>
+
+        <!-- è¿™æ˜¯ä¸ºäº†.Net/JSäº’æ“ä½œè€Œæ·»åŠ çš„ -->
+        <div id="blazorapp"></div>
+        <script src="_framework/blazor.webview.js" autostart="false"></script>
+        ```
+
+    > :bulb:
+    > id="blazorapp"ï¼Œidå¯éšæ„å–åï¼Œä½†æ˜¯ä¸èƒ½ä¸vueé¡¹ç›®ä¸­çš„å…¶å®ƒidå†²çªã€‚
+    > è®°ä½è¿™ä¸ªidï¼Œä¹‹åä¿®æ”¹.Neté¡¹ç›®æ—¶è¦ç”¨åˆ°
+
+-   åœ¨é€‚å½“çš„ä½ç½®ç¼–å†™JSä»£ç æ¥æ¥å—.Netçš„è°ƒç”¨
+
     ```js
-    DotNet.invokeMethodAsync(
-      MAUI_Project_ASSEMBLY_NAME,
-      'CallDotNetFromJs',
-      'this is Message'
-    ).then((data) => {
-      console.log(data)
+    // ./src/views/HomeView.vue
+    onMounted(() => {
+      // æš´éœ²jsæ–¹æ³•åˆ°windowä¸­ï¼Œä»¥ä¾¿.Netè°ƒç”¨JS
+      window['JsAlert'] = (data: string) => {
+        console.log('JsAlert:\t' + data)
+        alert(data)
+        return 'JsAlert Success'
+      }
     })
     ```
-    > [!NOTE]  
-    > Èç¹ûÊÇTypescriptÏîÄ¿£¬ĞèÒª×¢Òâ£¬ÒªºöÂÔts¼ì²éÆ÷±¨µÄ"DotNet"¶ÔÏóÎ´¶¨ÒåµÄ´íÎó
-    > ÀıÈçÊ¹ÓÃÒÔÏÂ·½Ê½ºöÂÔ´íÎó£¬
-    ```ts
-    // ./src/globals.d.ts
-    declare interface Window {
-      DotNet: any
-    }
 
-    // ./src/views/HomeView.vue
-    // ¶¨ÒåDotNet
-    const DotNet = window.DotNet
-    // Ê¹ÓÃDotNet
-    DotNet.invokeMethodAsync(xxx,xxx)
+    > ç›®çš„æ˜¯å°†éœ€è¦çš„æ–¹æ³•æš´éœ²åˆ°windowå¯¹è±¡ä¸­ï¼Œä¸ºäº†æ–¹ä¾¿ç®€å•ï¼Œæ­¤å¤„ç›´æ¥ä½¿ç”¨ window['functionName'] çš„æ–¹å¼è¿›è¡Œå¤„ç†
+
+#### ä¿®æ”¹.Net MAUI Blazor Hybridé¡¹ç›®
+
+- ä¿®æ”¹BlazorWebViewçš„RootComponentçš„Selector
+    - å°†Selectorçš„å€¼ä¿®æ”¹ä¸ºå‰é¢æ·»åŠ çš„id="blazorapp"çš„divçš„idå€¼ï¼š**#blazorapp**
+    ```xml
+    <BlazorWebView
+        x:Name="blazorWebView"
+        HostPage="wwwroot/index.html">
+        <BlazorWebView.RootComponents>
+            <RootComponent ComponentType="{x:Type local:Components.Routes}" Selector="#blazorapp" />
+        </BlazorWebView.RootComponents>
+    </BlazorWebView>
     ```
 
--   ¹¹½¨Ö®ºó¸´ÖÆÎÄ¼şÕ³Ìùµ½wwwrootÄ¿Â¼ÖĞ¡£ [²ÎÕÕ¡°×î¼òµ¥µÄ¡±ÕâÒ»²¿·Ö](###×î¼òµ¥µÄ£¬²»ĞèÒª.NetÓëVue»¥¶¯²Ù×÷µÄ)
+- ä¿®æ”¹Selectorçš„å€¼ä¹‹åï¼Œä¾¿å¯åœ¨razoré¡µé¢ä¸­ä½¿ç”¨JSRuntimeè°ƒç”¨vueé¡µé¢ä¸­çš„jsæ–¹æ³•äº†
+    ```csharp
+    // Home.razor
+    string result = await JSRuntime.InvokeAsync<string>("JsAlert", "Message From .Net");
+    ```
+
+#### ç®€å•ç¤ºä¾‹
+> æœ€ç®€å•çš„.Netè°ƒç”¨vue jså‡½æ•°çš„æ–¹æ³•
+
+1. åœ¨åˆé€‚çš„ä½ç½®ç¼–å†™ä¸€ä¸ªEventHandler
+    ```csharp
+    // ä¾‹å¦‚ï¼šåœ¨MainPage.xaml.csä¸­æ·»åŠ 
+    public static event EventHandler<string> CallJsFunction = null!;
+    ```
+2. ä¿®æ”¹BlazorWebView.RootComponentçš„Selectorï¼ˆä¿®æ”¹ä¸º #blazorappï¼‰
+3. ä¿®æ”¹MainLayout.razorï¼Œå®Œå…¨æ¸…ç†æ‰æ‰€æœ‰å¸ƒå±€ç›¸å…³çš„æ ‡ç­¾ï¼Œé˜²æ­¢vueé¡µé¢æ˜¾ç¤ºå¼‚å¸¸
+    ```html
+    <!-- ./Components/Layout/MainLayout.razor -->
+    <!-- æ•´ä¸ªrazoræ–‡ä»¶ä»…æœ‰ä»¥ä¸‹2è¡Œä»£ç  -->
+    @inherits LayoutComponentBase
+    @Body
+    ```
+4. ä¿®æ”¹Home.razorï¼ŒåŒæ ·æ˜¯å®Œå…¨æ¸…ç†æ‰æ‰€æœ‰å¸ƒå±€ç›¸å…³çš„æ ‡ç­¾
+    ```csharp
+    @page "/"
+    @using System.Diagnostics
+    @inject IJSRuntime JSRuntime
+
+    @code {
+        protected override Task OnInitializedAsync()
+        {
+            base.OnInitializedAsync();
+
+            ProjectNamespane.MainPage.CallJsFunction += async (sender, args) =>
+            {
+                string result = await JSRuntime.InvokeAsync<string>("JsAlert", args);
+            };
+
+            return Task.CompletedTask;
+        }
+    }
+    ```
+5. åœ¨éœ€è¦çš„ä½ç½®è°ƒç”¨CallJsFunction?.Invoke(null!, "Message From .Net");å³å¯
+    ```csharp
+    ProjectNamespane.MainPage.CallJsFunction?.Invoke(null!, "Message From .Net");
+    ```
 
 ---
 
-### ÍêÕûµÄVueºÍ.Net»¥¶¯
+## ä¸€äº›å°é—®é¢˜
 
-³ıÁËµÚ¶ş²¿·ÖËùËµµÄ¹¦ÄÜÖ®Íâ£¬»¹ĞèÒª.NetÖ÷¶¯µ÷ÓÃvueµÄjs·½·¨£¬ÒÔ±ãÍ¨Öªvue³ÌĞòµÄ£¬ÈçºóÌ¨·şÎñ¡¢ÈÎÎñµÄÖ÷¶¯Í¨ÖªµÈ¹¦ÄÜ¡£
+### ç›®å‰çš„BlazorWebViewå­˜åœ¨çš„é—®é¢˜åŠå¯èƒ½çš„è§£å†³æ–¹æ³•
 
-
----
+- åœ¨å®‰å“ç³»ç»Ÿä¸Šä½¿ç”¨&lt;input type="file" capture="camera" /&gt;æ—¶ï¼Œä¸èƒ½è°ƒå‡ºæ‹ç…§åŠŸèƒ½ 
+    - https://github.com/dotnet/maui/issues/884
+    - ç›®å‰å¯è¡Œçš„è§£å†³æ–¹æ³• https://github.com/dotnet/maui/issues/884#issuecomment-1760299780
+    - å¯å‚è€ƒé¡¹ç›®ä¸­çš„
+        - [CustomActivityResultCallbackRegistry.cs](./MauiHybridApp/Platforms/Android/CustomActivityResultCallbackRegistry.cs)
+        - [CustomMauiWebChromeClient.cs](./MauiHybridApp/Platforms/Android/CustomMauiWebChromeClient.cs)
+        - [MainActivity.cs](./MauiHybridApp/Platforms/Android/MainActivity.cs)
+        - [MainPage.xaml.cs](./MauiHybridApp/MainPage.xaml.cs)
