@@ -1,114 +1,117 @@
 # VueMauiHybridApp
 
-# 使用.Net MAUI Blazor Hybrid 打包和包装 Vue 应用
+[中文](./README_CN.md)/[English](./README.md)
 
-## 简介
+# using .Net MAUI Blazor Hybrid to package a Vue app
 
-使用.Net MAUI Blazor Hybrid 来打包和包装一个 Vue 应用。以便将 Vue 网页带到安卓 App、Window 桌面程序等等的其它平台上展示。
+## Introduction
 
-## 目录
+using .Net MAUI Blazor Hybrid to package a Vue app, so that the Vue web page can be displayed on Android App, Windows Desktop, etc.
 
-- [不需要前后台互动](#最简单的)
-- [简单的前后台互动](#简单的前后台互动)
-- [完整的前后台互动](#完整的前后台互动)
-    - [简单示例](#简单示例)
+## Contents
 
-- [来自BlazorWebView的小问题](#一些小问题) 
+- [No vue and .Net interaction required](#the-easiest)
+- [Simple vue and .Net interaction](#simple-vue-and-net-interaction)
+- [Full vue and .Net interaction](#full-vue-and-net-interaction)
+    - [Simple Example](#simple-example)
 
-## 示例
+- [Some small issues from BlazorWebView](#some-small-problems) 
 
-![示例](./Sample/Sample_7.png)
-![示例](./Sample/Sample_6.png)
+## Sample
 
-## 先决条件
+![sample](./Sample/Sample_7.png)
+![sample](./Sample/Sample_6.png)
 
-1. 创建.Net MAUI Blazor Hybrid 项目
+## Prerequisite
 
-    > 打开 Visual Studio 并创建一个新的.Net MAUI Blazor Hybrid 项目。并按照向导的指示完成项目的创建。
+1. Create .Net MAUI Blazor Hybrid Project
 
-    ![创建MAUI Blazor Hybrid项目](./Sample/Sample_1.png)
+    > Open Visual Studio and create a new .Net MAUI Blazor Hybrid project. Follow the wizard to complete the project creation.
+    
+    ![create a new .Net MAUI Blazor Hybrid project](./Sample/Sample_1.png)
 
-2. 创建 Vue 应用
+2. Create Vue App
 
-    > 按照自己喜欢的方式创建一个 Vue 应用。
+    > Create a Vue app according to your preference.
 
-    > 比如：跟随 vite 的[官方文档](https://vuejs.org/guide/quick-start.html)创建一个 vue 应用。
+    > For example: create a vue application following [the official documentation of vite.](https://vuejs.org/guide/quick-start.html)
 
-    ![创建Vue应用](./Sample/Sample_2_1.png)
-
----
-
-## 不同的操作方式
-
-### 最简单的
-
-> 不需要.Net与Vue互动操作
-
-最简单，不关注 JS 与.Net 之间的互动操作的，仅仅是将一个简单的 vue 网页打包成应用程序的。
-
-1. 构建 vue 应用
-
-2. 打开构建完成的目录（如 dist 目录），并复制所有文件
-
-3. 打开 MAUI Blazor Hybrid 项目中的 wwwroot 目录，并粘贴覆盖文件
-
-4. 运行 MAUI Blazor Hybrid 应用即可
-
-    ![复制粘贴即可](./Sample/Sample_3.png)
+    ![create a vue application](./Sample/Sample_2_1.png)
 
 ---
 
-### 简单的前后台互动
+## Different ways of operation
 
-> 简单的 Vue 和.Net 互动，由Vue调用.Net方法的单向互动
+### The easiest
 
-比较简单，需要 vue 程序调用一些.Net 方法的，如检查应用权限、调用摄像头、扫描条形码、二维码等任务的。
+> Do not need .Net and Vue interaction
 
-#### 修改vue项目
+The easiest way, don't need .Net and Vue interaction, just package a simple vue web page as an application.
 
-- 打开 vue 项目的 index.html 文件，在&lt;body&gt;标签内添加以下代码
+1. Build vue application
+
+2. open the build folder (e.g. dist) and copy all files
+
+3. Open the wwwroot folder in the MAUI Blazor Hybrid project and paste the copied files
+
+4. Run the MAUI Blazor Hybrid application
+
+    ![paste the copied files](./Sample/Sample_3.png)
+
+---
+
+### Simple vue and .Net interaction
+
+> Simple Vue and .Net interaction, one-way interaction where Vue calls .Net methods
+
+It is relatively simple and requires the vue program to call some .Net methods, such as checking application permissions, calling the camera, scanning barcodes, QR codes, etc.
+
+#### Modify vue project
+
+- Open the index.html file in the vue project. Add the following code in the &lt;body&gt; tag.
 
     ```js
     <script src="_framework/blazor.webview.js" autostart="false"></script>
     ```
 
     > :bulb:
-    > Vue 开发阶段请直接忽略"找不到\_framework/blazor.webview.js"的错误
+    > When developing Vue, please ignore the error "Cannot find _framework/blazor.webview.js"
 
-- 打开 vue 项目，同样是按照[微软官方教程](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript)编写 Javascript 方法
+- Open the vue project, as well as follow the [Microsoft official tutorial](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript) to write Javascript methods
 
     ```js
     DotNet.invokeMethodAsync(
-    MAUI_Project_ASSEMBLY_NAME,
-    "CallDotNetFromJs",
-    "this is Message"
+        MAUI_Project_ASSEMBLY_NAME,
+        "CallDotNetFromJs",
+        "this is Message"
     ).then((data) => {
-    console.log(data);
+        console.log(data);
     });
     ```
 
     > :information_source: 
-    > 如果是 Typescript 项目，需要注意，要忽略 ts 检查器报的"DotNet"对象未定义的错误
-    > 例如：使用以下方式忽略错误，
+    > If it is a Typescript project, please note that you should ignore the "DotNet" object undefined error reported by the ts checker
+    
+    > For example, use the following to ignore errors:
 
     ```ts
     // ./src/globals.d.ts
     declare interface Window {
-    DotNet: any;
+        DotNet: any;
     }
 
     // ./src/views/HomeView.vue
-    // 定义DotNet
+    // Define DotNet
     const DotNet = window.DotNet;
-    // 使用DotNet
+    // Use DotNet
     DotNet.invokeMethodAsync(xxx, xxx);
     ```
 
-- 构建之后复制文件粘贴到 wwwroot 目录中。 [参照“最简单的”这一部分](#最简单的)
+- After building, copy the files to the wwwroot folder, as well as follow the [#The easiest](#the-easiest)
 
-#### 修改.Net MAUI Blazor Hybrid项目
+#### Modify .Net MAUI Blazor Hybrid project
 
-- 打开.Net MAUI Blazor Hybrid 项目中的 MainPage.xaml.cs，按照[微软官方教程](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript)编写 JSInvokable 方法，例如：
+- Open MainPage.xaml.cs in the .Net MAUI Blazor Hybrid project and follow the [Microsoft official tutorial](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript) to write a JSInvokable method, for example:
 
     ```csharp
     [JSInvokable]
@@ -118,57 +121,58 @@
     }
     ```
 
-- 运行
+- Run/Debug/Build
 
-    > 运行前确保wwwroot目录中已经粘贴有最新构建的vue app
+    > Make sure that the wwwroot folder contains the latest build vue app
 
-> :warning: **自行确保有添加各个平台下所需要的权限**
+> :warning: **Confirm that the permissions are set properly**
 
-> 如./Platforms/Android/AndroidManifest.xml文件中已经添加了所需要的安卓权限
+> e.g. The required Android permissions have been added to the ./Platforms/Android/AndroidManifest.xml file.
 
 ---
 
-### 完整的前后台互动
+### Full vue and .Net interaction
 
-> 完整的 Vue 和.Net 互动，除了Vue调用.Net方法，还有.Net调用Vue方法
+> Complete Vue and .Net interaction, in addition to Vue calling .Net methods, there are also .Net calling Vue methods.
 
-除了[第二部分](#简单的前后台互动)所说的功能之外，还需要.Net 主动调用 vue 的 js 方法，以便通知 vue 程序的，如后台服务、任务的主动通知等功能。
+In addition to the functions mentioned in [Part 2](#simple-vue-and-net-interaction), .Net is also required to actively call Vue's js method to notify the Vue program, such as active notification of background services and tasks.
 
-#### 修改vue项目
+#### Modify vue project
 
-> :information_source: 前置条件：请先按照[第二部分-简单的前后台互动](#简单的前后台互动)所说的步骤进行修改
+> :information_source: Prerequisites: Please follow the steps in [Part 2 - Simple vue and .Net interaction](#simple-vue-and-net-interaction) to make changes
 
-- 打开 vue 项目的 index.html 文件，在&lt;body&gt;标签内添加以下代码
+- Open the index.html file in the vue project. Add the following code in the &lt;body&gt; tag.
 
     ```html
     <div id="blazorapp"></div>
     ```
     
     > :bulb:
-    > 不要覆盖原本的&lt;div id="app"&gt;&lt;/div&gt;，是新添加一行
+    > Do not overwrite the original &lt;div id="app"&gt;&lt;/div&gt;, is a new line
 
-    - 添加之后的index.html的&lt;body&gt;标签应该是这样子
+    - After adding, the &lt;body&gt; tag should be like this
 
         ```html
-        <!-- 这是vite创建vue项目时就有的 -->
+        <!-- This is what Vite has when it creates a Vue project. -->
         <div id="app"></div>
         <script type="module" src="/src/main.ts"></script>
 
-        <!-- 这是为了.Net/JS互操作而添加的 -->
+        <!-- This is for .Net/JS interaction -->
         <div id="blazorapp"></div>
         <script src="_framework/blazor.webview.js" autostart="false"></script>
         ```
 
     > :bulb:
-    > id="blazorapp"，id可随意取名，但是不能与vue项目中的其它id冲突。
-    > 记住这个id，之后修改.Net项目时要用到
+    > id="blazorapp", The id can be named arbitrarily, but it cannot conflict with other ids in the vue project.
+    
+    > Remember this id, you will need it when you modify the .Net project later.
 
--   在适当的位置编写JS代码来接受.Net的调用
+-   Write Javascript code to receive .Net calls
 
     ```js
     // ./src/views/HomeView.vue
     onMounted(() => {
-      // 暴露js方法到window中，以便.Net调用JS
+      // Expose js methods to window, for .Net to call JS
       window['JsAlert'] = (data: string) => {
         console.log('JsAlert:\t' + data)
         alert(data)
@@ -177,12 +181,12 @@
     })
     ```
 
-    > 目的是将需要的方法暴露到window对象中，为了方便简单，此处直接使用 window['functionName'] 的方式进行处理
+    > The purpose is to expose the required methods to the window object. For the sake of convenience and simplicity, window['functionName'] is used directly here.
 
-#### 修改.Net MAUI Blazor Hybrid项目
+#### Modify .Net MAUI Blazor Hybrid project
 
-- 修改BlazorWebView的RootComponent的Selector
-    - 将Selector的值修改为前面添加的id="blazorapp"的div的id值：**#blazorapp**
+- Modify the Selector of BlazorWebView.RootComponent
+    - Change the value of Selector to the id value of the div with id="blazorapp" added earlier: **#blazorapp**
     ```xml
     <BlazorWebView
         x:Name="blazorWebView"
@@ -193,29 +197,29 @@
     </BlazorWebView>
     ```
 
-- 修改Selector的值之后，便可在razor页面中使用JSRuntime调用vue页面中的js方法了
+- After modifying the value of Selector, you can use JSRuntime in the razor page to call the js method in the vue page.   
     ```csharp
     // Home.razor
     string result = await JSRuntime.InvokeAsync<string>("JsAlert", "Message From .Net");
     ```
 
-#### 简单示例
-> 最简单的.Net调用vue js函数的方法
+#### Simple Example
+> The simplest way to call the vue js function in .Net
 
-1. 在合适的位置编写一个EventHandler
+1. Write an EventHandler at the appropriate location
     ```csharp
-    // 例如：在MainPage.xaml.cs中添加
+    // For example: add in MainPage.xaml.cs
     public static event EventHandler<string> CallJsFunction = null!;
     ```
-2. 修改BlazorWebView.RootComponent的Selector（修改为 #blazorapp）
-3. 修改MainLayout.razor，完全清理掉所有布局相关的标签，防止vue页面显示异常
+2. Modify the Selector of BlazorWebView.RootComponent (modify to #blazorapp)
+3. Modify MainLayout.razor and completely clean up all tags to prevent abnormal display of Vue pages
     ```html
     <!-- ./Components/Layout/MainLayout.razor -->
-    <!-- 整个razor文件仅有以下2行代码 -->
+    <!-- The entire razor file only has the following 2 lines of code -->
     @inherits LayoutComponentBase
     @Body
     ```
-4. 修改Home.razor，同样是完全清理掉所有布局相关的标签
+4. Modify Home.razor and completely clean up all tags.
     ```csharp
     @page "/"
     @using System.Diagnostics
@@ -235,25 +239,25 @@
         }
     }
     ```
-5. 在需要的位置调用CallJsFunction?.Invoke(null!, "Message From .Net");即可
+5. Just call CallJsFunction?.Invoke(null!, "Message From .Net"); where needed
     ```csharp
     ProjectNamespane.MainPage.CallJsFunction?.Invoke(null!, "Message From .Net");
     ```
+    
+> :warning: **Confirm that the permissions are set properly**
 
-> :warning: **自行确保有添加各个平台下所需要的权限**
-
-> 如./Platforms/Android/AndroidManifest.xml文件中已经添加了所需要的安卓权限
+> e.g. The required Android permissions have been added to the ./Platforms/Android/AndroidManifest.xml file.
 
 ---
 
-## 一些小问题
+## Some small problems
 
-### 目前的BlazorWebView存在的问题及可能的解决方法
+### Problems and possible solutions to the current BlazorWebView
 
-- 在安卓系统上使用&lt;input type="file" capture="camera" /&gt;时，不能调出拍照功能 
+- In the Android system, the &lt;input type="file" capture="camera" /&gt; does not call out the camera function
     - https://github.com/dotnet/maui/issues/884
-    - 目前可行的解决方法 https://github.com/dotnet/maui/issues/884#issuecomment-1760299780
-    - 目前的解决方法可参考项目中的
+    - Currently available solutions https://github.com/dotnet/maui/issues/884#issuecomment-1760299780
+    - The current solution can be found in the project
         - [CustomActivityResultCallbackRegistry.cs](./MauiHybridApp/Platforms/Android/CustomActivityResultCallbackRegistry.cs)
         - [CustomMauiWebChromeClient.cs](./MauiHybridApp/Platforms/Android/CustomMauiWebChromeClient.cs)
         - [MainActivity.cs](./MauiHybridApp/Platforms/Android/MainActivity.cs)
